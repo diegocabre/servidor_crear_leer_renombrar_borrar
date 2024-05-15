@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Archivos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="row w-75 m-auto">
+    <!-- Crear -->
+    <div class="col-12 col-sm-3 container p-5">
+      <h3>Crear un archivo</h3>
+      <form action="/create" method="get">
+        <div class="form-group">
+          <label for="create-filename">Nombre del archivo</label>
+          <input name="filename" class="form-control" id="create-filename" required />
+        </div>
+        <div class="form-group">
+          <label for="create-content">Contenido</label>
+          <textarea name="content" class="form-control" id="create-content" cols="30" rows="10" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear archivo</button>
+      </form>
+    </div>
+    <!-- Leer -->
+    <div class="col-12 col-sm-3 container p-5">
+      <h3>Leer un archivo</h3>
+      <form action="/read" method="get">
+        <div class="form-group">
+          <label for="read-filename">Nombre del archivo</label>
+          <input name="filename" class="form-control" id="read-filename" required />
+        </div>
+        <button type="submit" class="btn btn-info">Consultar archivo</button>
+      </form>
+    </div>
+    <!-- Renombrar -->
+    <div class="col-12 col-sm-3 container p-5">
+      <h3>Renombrar un archivo</h3>
+      <form action="/rename" method="get">
+        <div class="form-group">
+          <label for="rename-oldFilename">Nombre actual del archivo</label>
+          <input name="oldFilename" class="form-control" id="rename-oldFilename" required />
+        </div>
+        <div class="form-group">
+          <label for="rename-newFilename">Nuevo nombre del archivo</label>
+          <input name="newFilename" class="form-control" id="rename-newFilename" required />
+        </div>
+        <button type="submit" class="btn btn-warning">Renombrar archivo</button>
+      </form>
+    </div>
+    <!-- Eliminar -->
+    <div class="col-12 col-sm-3 container p-5">
+      <h3>Eliminar un archivo</h3>
+      <form action="/delete" method="get">
+        <div class="form-group">
+          <label for="delete-filename">Nombre del archivo</label>
+          <input name="filename" class="form-control" id="delete-filename" required />
+        </div>
+        <button type="submit" class="btn btn-danger">Eliminar archivo</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
